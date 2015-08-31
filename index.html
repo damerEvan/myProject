@@ -1,21 +1,34 @@
 <html>
-<body ng-app='AmazonApp' ng-controller='AmazonController'>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body ng-app="AmazonApp" ng-controller="AmazonController">
+	<h1>Random Gifts</h1>
 
 	<div class="mainProducts" ng-animate="">	
-		<div ng-repeat='item in data'>{{item}}</div>
-		<div class='first'> </div>
-		<div class='second'> </div>
-		<div class='third'> </div>
-		<div class="fourth"> </div>
-		<div class="fifth"> </div>
+		<div ng-repeat="">{{item}}</div>
+		<div class="first product"> </div>
+		<div class="second product"> </div>
+		<div class="third product"> </div>
+		<div class="fourth product"> </div>
+		<div class="fifth product"> </div>
 	</div>
 
-	<form>
-		<button ng-click="Find Gifts"></button>
-		<select ng-model="sortType">
-			
-		</select>
-	</form>
+	<div class="getGifts">
+		<form class="giftFinder">
+			<h3>How much?</h3>
+			<input ng-model="addPrice" placeholder="$">
+			<h3>Catagory</h3>
+			<select ng-model="sortType">
+				<option value="bachelorParty">Bachelor Party</option>
+				<option value="bacheloretteParty">Bachelorette Party</option>
+				<option value="birthdayPartyAdult">Birthday Party (Adult)</option>
+				<option value="birthdayPartyChild">Birthday Party (child)</option>
+			</select>
+			<button ng-click="findGifts">Find Gifts</button>
+		</form>
+	</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
